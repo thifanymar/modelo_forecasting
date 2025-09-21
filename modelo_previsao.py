@@ -205,10 +205,19 @@ features_grid = ['internal_store_id', 'internal_product_id', 'Semana', 'month', 
 previsao_grid['quantidade'] = model.predict(previsao_grid[features_grid]).round().astype(int)
 
 # --- 4️⃣ Ajustar colunas e salvar CSV ---
+# --- 4️⃣ Ajustar colunas e salvar CSV ---
 previsao_final = previsao_grid[['Semana', 'internal_store_id', 'internal_product_id', 'quantidade']]
-previsao_final.rename(columns={'internal_store_id':'pdv', 'internal_product_id':'produto'}, inplace=True)
 
+# Renomear as colunas exatamente como pedido
+previsao_final.rename(columns={
+    'Semana': 'semana',
+    'internal_store_id':'pdv',
+    'internal_product_id':'produto'
+}, inplace=True)
+
+# Salvar CSV no formato correto
 previsao_final.to_csv("previsao_jan_2023.csv", sep=';', index=False, encoding='utf-8')
+
 print("CSV de previsão para janeiro/2023 gerado com sucesso ✅")
 
 
