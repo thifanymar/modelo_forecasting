@@ -141,10 +141,13 @@ def avaliar_modelo(y_test, y_pred, X_test):
 # PIPELINE PRINCIPAL
 # ===============================
     # --- Carregar dados ---
+caminho = r""
+
+
 df_transacoes, df_pdv, df_produtos = carregar_dados(
-    r"C:\Users\thifa\Downloads\hackathon_2025_templates\hackathon_2025_templates\part-00000-tid-5196563791502273604-c90d3a24-52f2-4955-b4ec-fb143aae74d8-4-1-c000.snappy.parquet",
-    r"C:\Users\thifa\Downloads\hackathon_2025_templates\hackathon_2025_templates\part-00000-tid-2779033056155408584-f6316110-4c9a-4061-ae48-69b77c7c8c36-4-1-c000.snappy.parquet",
-    r"C:\Users\thifa\Downloads\hackathon_2025_templates\hackathon_2025_templates\part-00000-tid-7173294866425216458-eae53fbf-d19e-4130-ba74-78f96b9675f1-4-1-c000.snappy.parquet"
+    f"{caminho}part-00000-tid-5196563791502273604-c90d3a24-52f2-4955-b4ec-fb143aae74d8-4-1-c000.snappy.parquet",
+    f"{caminho}part-00000-tid-2779033056155408584-f6316110-4c9a-4061-ae48-69b77c7c8c36-4-1-c000.snappy.parquet",
+    f"{caminho}part-00000-tid-7173294866425216458-eae53fbf-d19e-4130-ba74-78f96b9675f1-4-1-c000.snappy.parquet"
 )
 
 # --- Preparar dados ---
